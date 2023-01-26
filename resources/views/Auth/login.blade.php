@@ -33,9 +33,12 @@
                             <div class="form-group mb-3">
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" name="remember"> Remember Me
+                                        <input type="checkbox" name="remember">مرا به خاطر بسپار
                                     </label>
                                 </div>
+                            </div>
+                            <div class="form-group mb-3">
+                                <a href={{route('register-user')}}>ثبت نام</a>
                             </div>
                             <div class="d-grid mx-auto">
                                 <button type="submit" class="btn btn-dark btn-block">Sign in</button>

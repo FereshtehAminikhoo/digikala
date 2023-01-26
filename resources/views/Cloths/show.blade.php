@@ -1,22 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Show Cloth</title>
-</head>
-<body>
-    <div class="row">
+@extends('master')
+@section('main')
+ 
         <div class="col-md-9" style="margin:auto;margin-top:20px">
-        <a href="{{route('insertcloth')}}" class="btn btn info">افزودن لباس</a>
-        <ul>
-            <li>{{$cloth->title}}</li>
-            <li>{{$cloth->image}}</li>
-            <li>{{$cloth->price}}</li>
-        </ul>
+        <a href="{{route('insertcloth')}}" class="btn btn-info mb-3">افزودن لباس</a>
+        <div class="row mb-2">
+            <span class="col-3">عنوان</span>
+            <span class="col-9">{{$cloth->title}}</span>
         </div>
-    </div>
-    
-</body>
-</html>
+        <div class="row mb-2" >
+            <span class="col-3">عکس</span>
+            <span class="col-9">{{$cloth->image}}</span>
+        </div>
+        <div class="row mb-2">
+            <span class="col-3">قیمت</span>
+            <span class="col-9">{{$cloth->price}}</span>
+        </div>
+       
+        </div>
+   
+@stop

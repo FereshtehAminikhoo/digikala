@@ -10,14 +10,14 @@ class ClothController extends Controller
 {
     //
     public function index(){
-        if(Auth::check()){
-            $cloths = Cloth::all;
-            return view('cloths.cloths', ['cloths'=>$cloth]);
-        } abort(401);
+        
+            $cloth = Cloth::all();
+            return view('cloths.index', ['cloths'=>$cloth]);
+        
     }
 
     public function insert(){
-        return view('cloths.insert');
+               return view('cloths.insert');
 
     }
 
@@ -29,7 +29,7 @@ class ClothController extends Controller
         $data = $request -> all();
         Cloth::create([
             'title' => $data['title'],
-            'image' => $data['picture'],
+            'image' => $data['image'],
             'price' => $data['price']
         ]);
         
@@ -43,6 +43,12 @@ class ClothController extends Controller
         return view('cloths.update', ['cloth' => $cloth]);
     }
 
+    public function dashboard(){
+        if(Auth::check()){
+            return view('dashboard');
+        } abort(401);
+        
+    }
     public function edit(Request $request){
         $cloth = Cloth::find($request -> id);
         $cloth->title = $request->title;
@@ -61,5 +67,10 @@ class ClothController extends Controller
         $cloth = Cloth::find($id);
         $cloth->delete();
         return redirect(route('cloths.index'));
+    }
+
+    public function logout(){
+        Auth::logout();
+        return redirect(route('login'));
     }
 }

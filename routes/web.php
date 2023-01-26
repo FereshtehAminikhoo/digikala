@@ -21,9 +21,9 @@ Route::get('/', function () {
 
 Route::get('cloths', [ClothController::class, 'index']) -> name('cloths.index');
 Route::get('insertcloth', [ClothController::class, 'insert']) -> name('insertcloth');
-// Route::get('insertcloth', [ClothController::class, 'create']) -> name('insertclothpost');
-Route::get('insertcloth', [ClothController::class, 'create']) -> name('insertcloth');
-Route::post('insertcloth', [ClothController::class, 'create']) -> name('insertclothpost');
+Route::get('dashboard', [ClothController::class, 'dashboard']) -> name('dashboard');
+Route::get('createcloth', [ClothController::class, 'create']) -> name('createcloth');
+Route::post('insertcloth', [ClothController::class, 'store']) -> name('insertclothpost');
 Route::post('storecloth', [ClothController::class, 'store']) -> name('storecloth');
 Route::get('indexClothes',[ClothController::class, 'index'])->name('cloths.index');
 Route::get('updatecloth/{id}', [ClothController::class, 'update'])->name('updatecloth');
@@ -34,3 +34,4 @@ Route::get('registration', [CustomAuthController::class, 'registration'])->name(
 Route::get('login', [CustomAuthController::class, 'index'])->name('login');
 Route::post('custom-registration', [CustomAuthController::class, 'customRegistration'])->name('register.custom');
 Route::post('custom-login', [CustomAuthController::class, 'customLogin'])->name('login.custom');
+Route::post('logout', [ClothController::class,'logout'])->name('logout');

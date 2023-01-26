@@ -3,7 +3,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Hash;
 use Session;
-use App\Models\User;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 class CustomAuthController extends Controller
 {
@@ -42,8 +42,9 @@ class CustomAuthController extends Controller
         ]);
            
         $data = $request->all();
-        $check = $this->create($data);
-         
+        $newUser = $this->create($data);
+
+        Auth::loginUsingId($newUser->id);
         return redirect("dashboard")->withSuccess('You have signed-in');
     }
 
