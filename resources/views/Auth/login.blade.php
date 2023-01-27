@@ -37,11 +37,13 @@
                                     </label>
                                 </div>
                             </div>
-                            <div class="form-group mb-3">
-                                <a href={{route('register-user')}}>ثبت نام</a>
-                            </div>
                             <div class="d-grid mx-auto">
                                 <button type="submit" class="btn btn-dark btn-block">Sign in</button>
+                            </div>
+                            <br>
+                            <div class="form-group mb-3">
+                                <p>عضو جدید هستید؟</p>
+                                <a href={{route('register-user')}} class="btn btn-dark btn-block" style="padding-right:200px; padding-left:205px">Register</a>
                             </div>
                         </form>
                     </div>

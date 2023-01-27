@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon.png">
-    <title>Nice admin Template - The Ultimate Multipurpose admin template</title>
+    <title>Digikala</title>
     <!-- Custom CSS -->
     <link href={{asset('/assets/libs/chartist/dist/chartist.min.css')}} rel="stylesheet">
     <link href={{asset('/assets/extra-libs/c3/c3.min.css')}} rel="stylesheet">
@@ -77,7 +77,7 @@
 
 
                         
-                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
+                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();" class="btn btn-info">
                             Logout
                         </a>    
                         <form id="frm-logout" action="{{ route('logout') }}" method="POST" style="display: none;">

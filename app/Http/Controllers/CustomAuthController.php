@@ -25,7 +25,7 @@ class CustomAuthController extends Controller
                         ->withSuccess('Signed in');
         }
   
-        return redirect("login")->withSuccess('Login details are not valid');
+        return redirect("login")->withSuccess('جزئیات ورود معتبر نیست');
     }
 
     public function registration()
@@ -45,7 +45,7 @@ class CustomAuthController extends Controller
         $newUser = $this->create($data);
 
         Auth::loginUsingId($newUser->id);
-        return redirect("dashboard")->withSuccess('You have signed-in');
+        return redirect("dashboard")->withSuccess('شما وارد شدید');
     }
 
     public function create(array $data)
@@ -63,7 +63,7 @@ class CustomAuthController extends Controller
             return view('dashboard');
         }
   
-        return redirect("login")->withSuccess('You are not allowed to access');
+        return redirect("login")->withSuccess('شما اجازه دسترسی ندارید');
     }
     
     public function signOut() {
