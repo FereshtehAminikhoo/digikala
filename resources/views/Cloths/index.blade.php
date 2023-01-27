@@ -2,7 +2,7 @@
 
 @section('main')
     <div class="col-md-9" style="margin:auto;margin-top:20px">
-    <a href = "{{route('insertcloth')}}" class="btn btn-info">افزودن لباس</a>
+    <a href = "{{route('insertcloth')}}" class="btn btn-info" style="margin-bottom:20px">افزودن لباس</a>
     <br>
     <h1>لیست لباس ها</h1>
     <table class="table table-bordered" style="margin-top:20px">
